@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <!--Firebase CDN-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyCCPnN3935Y4gD80Ow19hw6Q86x7A_ogPY",
+        authDomain: "learning-firebase-e2201.firebaseapp.com",
+        projectId: "learning-firebase-e2201",
+        storageBucket: "learning-firebase-e2201.appspot.com",
+        messagingSenderId: "991874094707",
+        appId: "1:991874094707:web:7aa1f86c70ff84714b3c06",
+        measurementId: "G-NZVFJ9WH1L",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row p-4">
+        <div class="col-md-8 mb-4">
+          <h1>My Contacts App 🔥</h1>
+        </div>
+        <div class="col-md-4">
+          <section id="signedOut">
+            <button
+              style="font-weight: bold"
+              id="signInBtn"
+              type="button"
+              class="btn btn-primary"
+            >
+              Sign in with Google
+            </button>
+          </section>
+
+          <section id="signedIn" hidden="true">
+            <div id="details" class="mb-3"></div>
+            <button id="signOutBtn" type="button" class="btn btn-danger">
+              Sign out
+            </button>
+          </section>
+        </div>
+      </div>
+
+      <div class="row p-4">
+        <section id="contacts" hidden="true">
+          <!-- <input type="text" placeholder="Name" id="name" value="" /> -->
+          <div class="mb-3">
+            <label class="form-label">Contact name</label>
+            <input type="text" class="form-control" id="name" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Contact number</label>
+            <input type="number" class="form-control" id="number" />
+          </div>
+          <!-- <input
+            type="number"
+            placeholder="Contact number"
+            id="number"
+            value=""
+          /> -->
+
+          <button id="add" type="button" class="btn btn-success mb-5">
+            Add Contact
+          </button>
+
+          <div id="list" style="list-style: none"></div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
